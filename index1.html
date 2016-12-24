@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="style/less.min.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="super.js"></script>
+<link rel="stylesheet" type="text/css" href="style/style1.css">
+</head>
+<body  ng-app = "myApp" ng-controller="appCtrl">
+	<div id="click-me"><button id="btn" ng-click="click1()" ng-show="btn">Click to Open our creative teams' profiles</button></div>
+   <div id="img" ng-style="img"></div>
+   <div id="img1" ng-style="img" ></div>
+   <div id="img2" ng-style="img" ></div>
+   <div id="img3" ng-style="img" ></div>
+<div id="show"></div>
+<div><a href="index2.html"><button id = "new" ng-show="but">Further</button></a></div>
+<script type="text/javascript">
+
+ $(document).ready(function() {
+
+    $("#img").click(function() {                
+
+      $.ajax({ 
+        type: "GET",
+        url: "display.php?q+",             
+        dataType: "html",               
+        success: function(response){                    
+            $("#show").html(response); 
+        }
+
+    });
+});
+     $("#img1").click(function() {                
+
+      $.ajax({ 
+        type: "GET",
+        url: "display1.php?q+",             
+        dataType: "html",               
+        success: function(response){                    
+            $("#show").html(response); 
+        }
+
+    });
+});
+      $("#img2").click(function() {                
+
+      $.ajax({ 
+        type: "GET",
+        url: "display2.php?q+",             
+        dataType: "html",               
+        success: function(response){                    
+            $("#show").html(response); 
+        }
+
+    });
+});
+       $("#img3").click(function() {                
+
+      $.ajax({ 
+        type: "GET",
+        url: "display3.php?q+",             
+        dataType: "html",               
+        success: function(response){                    
+            $("#show").html(response); 
+        }
+
+    });
+});
+});
+
+</script>
+</body>
+</html>

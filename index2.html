@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript"></script>
+<script type="text/javascript" src="style/less.min.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="super.js"></script>
+<link rel='stylesheet' href="style/style3.less">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" ><div id="vid">
+<video  autoplay="" width="90%" src="style/media/v.mp4"></video></div>
+<div class="secret"><span id="spann">Motivating, isn't it?</span> 
+<div id="poll"><a href="index3.html"><button>Yep</button></a><br><button ng-click="nope()">Nope</button>
+</div>
+</div>
+<div id="un" ng-show="un" ng-click="closed()"></div>
+
+<script>
+$(function() {
+  $(".secret").delay(47000).fadeIn();
+});
+
+var app = angular.module('myApp',[]);
+app.controller('myCtrl',function($scope){
+  $scope.un = false;
+  $scope.nope =function() {
+    $scope.un=true;
+  }
+    $scope.closed = function() {
+      $scope.un = !$scope.un;
+    }
+});
+
+</script>
+
+</body>
+</html>

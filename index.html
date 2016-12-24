@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="common.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="jquery/qry.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<link rel="stylesheet/less" href="style/style.less">
+<script type="text/javascript" src="style/less.min.js"></script>
+	<title>Introducing me</title>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl" class="ng-scope">
+<div id="back">
+<div id="overlay"></div>
+<button id="login" ng-click="loginClick()">login</button>
+<ul>
+	<a href="vk.com/piffles"><li>Islam Nur</li></a>
+	<li>present</li>
+	<li><h1>"The universe of my Imagination"</h1></li>
+	<li>WEB FRONT-END FINAL PROJECT</li>
+	<li><a href="index1.html"><button ng-click="start()" >START</button></a></li>
+</ul>
+</div>
+</div>
+</div>
+	<div id="overflow" ng-click="close()" ng-show="login1" ng-style="ok"></div>
+	<div id="stage" ng-show="stage" 	style="position: absolute;
+	top:40%;
+	left: 45%;
+	width:200px;
+	font-family: neoteric;
+	height:50px;
+	color:white;
+	font-size: 17px;""></div>
+	<div id="window" ng-show="login" ng-style="ok">
+	<span style="color:white;">Enter your data</span>
+		<p><input type="text" class="mail" id="email" placeholder="E-mail" ng-model="area1" ></p>
+		<p><input type="password" clas="pass" placeholder="Password" ng-model="area2"></p>
+		<button id="btn" class="clickbutton" ng-click="enter()">ENTER</button>
+		<br><br>
+		<spam class="error" ng-show="error"> Error </spam>
+</div>
+</div>	
+	
+<script type = "text/javascript" language = "javascript">
+ $(document).ready(function() {
+    $("#btn").click(function(event){
+       var name = $("#email").val();
+       $("#stage").load('result.php', {"name":name} );
+       $('#login').load('result.php', {"name":name});
+    });
+ });
+</script>
+</body>
+</html>
